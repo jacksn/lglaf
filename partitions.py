@@ -117,7 +117,7 @@ def laf_ioct(comm, fd_num, param):
 def laf_misc_write(comm, size, data):
     """This is for writting to the misc partition."""
     """You can specify an offset, but that is currently not implemented"""
-    misc_offset = 0
+    misc_offset = 32776
     write_cmd = lglaf.make_request(b'MISC', args=[b'WRTE', misc_offset, size], body=data)
     #header = comm.call(write_cmd)[0]
     comm.call(write_cmd)
